@@ -15,32 +15,17 @@
 .icons ul {
   padding: initial;
 }
+.icons ul img {
+  width: 50px;
+}
 .icons ul li {
-  height: 40px;
-  width: 40px;
   list-style-type: none;
   padding-left: 12px;
   padding-top: 6px;
   margin-top: 5px;
-  color: #fff;
 }
 .icons ul li:hover {
   padding-left: 30px;
   width: 80px;
   transition: 1s;
-}
-.icons ul .facebook {
-  background: #3b5998;
-}
-.icons ul .youtube {
-  background: #ff0000;
-}
-.icons ul .twitter {
-  background: #55acee;
-}
-.icons ul .instagram {
-  background: #e94ae1;
-}
-.icons ul .linkedin {
-  background: #007bb5;
 }/*# sourceMappingURL=style.css.map */
