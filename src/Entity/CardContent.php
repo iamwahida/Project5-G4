@@ -23,6 +23,12 @@ class CardContent
     #[ORM\Column(length: 63)]
     private ?string $card_pic = null;
 
+    #[ORM\Column]
+    private ?int $fk_university = null;
+
+    #[ORM\Column]
+    private ?int $fk_subject = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -60,6 +66,30 @@ class CardContent
     public function setCardPic(string $card_pic): self
     {
         $this->card_pic = $card_pic;
+
+        return $this;
+    }
+
+    public function getFkUniversity(): ?int
+    {
+        return $this->fk_university;
+    }
+
+    public function setFkUniversity(int $fk_university): self
+    {
+        $this->fk_university = $fk_university;
+
+        return $this;
+    }
+
+    public function getFkSubject(): ?int
+    {
+        return $this->fk_subject;
+    }
+
+    public function setFkSubject(int $fk_subject): self
+    {
+        $this->fk_subject = $fk_subject;
 
         return $this;
     }

@@ -24,10 +24,10 @@ class TutUnit
     private ?int $fk_student = null;
 
     #[ORM\Column(length: 31)]
-    private ?string $subject = null;
+    private ?string $fk_subject = null;
 
     #[ORM\Column(length: 31)]
-    private ?string $university = null;
+    private ?string $fk_university = null;
 
     public function getId(): ?int
     {
@@ -70,26 +70,26 @@ class TutUnit
         return $this;
     }
 
-    public function getSubject(): ?string
+    public function getFkSubject(): ?int
     {
-        return $this->subject;
+        return $this->fk_subject;
     }
 
-    public function setSubject(string $subject): self
+    public function setFkSubject(int $fk_subject): self
     {
-        $this->subject = $subject;
+        $this->subject = $fk_subject;
 
         return $this;
     }
 
-    public function getUniversity(): ?string
+    public function getFkUniversity(): ?int
     {
-        return $this->university;
+        return $this->fk_university;
     }
 
-    public function setUniversity(string $university): self
+    public function setUniversity(string $fk_university): self
     {
-        $this->university = $university;
+        $this->university = $fk_university;
 
         return $this;
     }
