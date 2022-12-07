@@ -15,4 +15,11 @@ class TutoringController extends AbstractController
             'controller_name' => 'TutoringController',
         ]);
     }
+    #[Route('/calendar', name: 'app_calendar')]
+    public function calendar(): Response
+    {
+        return $this->render('components/calendar.html.twig', [
+            'controller_name' => 'TutoringController',
+        ]);
+    }
 }
