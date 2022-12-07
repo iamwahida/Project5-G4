@@ -1,29 +1,29 @@
 {% extends "/base.html.twig" %}
 {% block stylesheets %}
-    <style>
-    .btn-primary{
-        background-color: #c7d9ff !important;
-        color: white !important;
-        border-color: #fff;
-    }
-    .btn-primary:hover{
-        background-color: #b6ccfc !important;
-        border-color: #a7bbfc !important;
-    }
-    </style>
+	<style>
+		.bg-primary {
+			background-color: #c7d9ff !important;
+			color: black !important;
+			border-color: #fff;
+		}
+		.btn-primary:hover {
+			background-color: #b6ccfc !important;
+			border-color: #a7bbfc !important;
+		}
+	</style>
 {% endblock %}
 
 
 {% block body %}
 	<div class="container">
-        <div class="row my-3 mx-5">
-            <div class="offset-1 col-3">
-                <a class="btn btn-secondary w-100">&lt; Week before</a>
-            </div>
-            <div class="offset-4 col-3">
-                <a class="btn btn-secondary w-100">Next week &gt;</a>
-            </div>
-        </div>
+		<div class="row my-3 mx-5">
+			<div class="offset-1 col-3">
+				<a class="btn btn-secondary w-100">&lt; Week before</a>
+			</div>
+			<div class="offset-4 col-3">
+				<a class="btn btn-secondary w-100">Next week &gt;</a>
+			</div>
+		</div>
 
 		<div class="row my-3 h5">
 			<div class="col text-center">
@@ -51,25 +51,22 @@
 				Sunday
 			</div>
 		</div>
-			{% for time in 7..18 %}
-				{% for day in  0..8 %}
+		{% for time in 7..18 %}
+			{% for day in  0..8 %}
 
-					{% if day == 0 %}
-                    <div class="row row-cols-7 border-bottom">
-						<div class="col text-center my-2 border-left">
+				{% if day == 0 %}
+					<div class="row row-cols-7 border-bottom">
+						<div class="col text-center d-block w-100">
 							{{time}}:00
 						</div>
-                    {% elseif(day % 8 == 0) %}
-                        </div>
-					{% else %}
-						<div class="col text-center border-left" href=".com">
-							<a href=".com" class="text-white btn btn-primary text-decoration-none w-100">+</a>
-						</div>
-					{% endif %}
-
-			    {% endfor %}
-            {% endfor %}
-
-
+				{% elseif(day % 8 == 0) %}
+					</div>
+				{% else %}
+					<div class="col text-center" href=".com">
+						<a href="" class="text-white d-block bg-primary text-decoration-none w-100">+</a>
+					</div>
+				{% endif %}
+			{% endfor %}
+		{% endfor %}
 	</div>
 {% endblock %}
