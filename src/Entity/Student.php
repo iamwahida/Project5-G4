@@ -29,6 +29,10 @@ class Student
     #[ORM\JoinColumn(nullable: false)]
     private ?Review $review = null;
 
+    #[ORM\OneToOne(cascade: ['persist', 'remove'])]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?user $fk_user = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -90,6 +94,18 @@ class Student
     public function setReview(?Review $review): self
     {
         $this->review = $review;
+
+        return $this;
+    }
+
+    public function getFkUser(): ?user
+    {
+        return $this->fk_user;
+    }
+
+    public function setFkUser(user $fk_user): self
+    {
+        $this->fk_user = $fk_user;
 
         return $this;
     }
