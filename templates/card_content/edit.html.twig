@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit CardContent{% endblock %}
+
+{% block body %}
+    <h1>Edit CardContent</h1>
+
+    {{ include('card_content/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_card_content_index') }}">back to list</a>
+
+    {{ include('card_content/_delete_form.html.twig') }}
+{% endblock %}

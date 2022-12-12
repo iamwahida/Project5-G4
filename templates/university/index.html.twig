@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}University index{% endblock %}
+
+{% block body %}
+    <h1>University index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>University_name</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for university in universities %}
+            <tr>
+                <td>{{ university.id }}</td>
+                <td>{{ university.universityName }}</td>
+                <td>
+                    <a href="{{ path('app_university_show', {'id': university.id}) }}">show</a>
+                    <a href="{{ path('app_university_edit', {'id': university.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_university_new') }}">Create new</a>
+{% endblock %}

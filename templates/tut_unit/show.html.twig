@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}TutUnit{% endblock %}
+
+{% block body %}
+    <h1>TutUnit</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ tut_unit.id }}</td>
+            </tr>
+            <tr>
+                <th>Available</th>
+                <td>{{ tut_unit.available ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Datetime</th>
+                <td>{{ tut_unit.datetime ? tut_unit.datetime|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_tut_unit_index') }}">back to list</a>
+
+    <a href="{{ path('app_tut_unit_edit', {'id': tut_unit.id}) }}">edit</a>
+
+    {{ include('tut_unit/_delete_form.html.twig') }}
+{% endblock %}

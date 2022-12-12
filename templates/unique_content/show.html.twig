@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}UniqueContent{% endblock %}
+
+{% block body %}
+    <h1>UniqueContent</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ unique_content.id }}</td>
+            </tr>
+            <tr>
+                <th>First_name</th>
+                <td>{{ unique_content.firstName }}</td>
+            </tr>
+            <tr>
+                <th>Last_name</th>
+                <td>{{ unique_content.lastName }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ unique_content.description }}</td>
+            </tr>
+            <tr>
+                <th>Tut_pic</th>
+                <td>{{ unique_content.tutPic }}</td>
+            </tr>
+            <tr>
+                <th>Bg_pic</th>
+                <td>{{ unique_content.bgPic }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_unique_content_index') }}">back to list</a>
+
+    <a href="{{ path('app_unique_content_edit', {'id': unique_content.id}) }}">edit</a>
+
+    {{ include('unique_content/_delete_form.html.twig') }}
+{% endblock %}

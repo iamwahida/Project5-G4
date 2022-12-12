@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}UniqueContent index{% endblock %}
+
+{% block body %}
+    <h1>UniqueContent index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>First_name</th>
+                <th>Last_name</th>
+                <th>Description</th>
+                <th>Tut_pic</th>
+                <th>Bg_pic</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for unique_content in unique_contents %}
+            <tr>
+                <td>{{ unique_content.id }}</td>
+                <td>{{ unique_content.firstName }}</td>
+                <td>{{ unique_content.lastName }}</td>
+                <td>{{ unique_content.description }}</td>
+                <td>{{ unique_content.tutPic }}</td>
+                <td>{{ unique_content.bgPic }}</td>
+                <td>
+                    <a href="{{ path('app_unique_content_show', {'id': unique_content.id}) }}">show</a>
+                    <a href="{{ path('app_unique_content_edit', {'id': unique_content.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_unique_content_new') }}">Create new</a>
+{% endblock %}

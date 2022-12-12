@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit UniqueContent{% endblock %}
+
+{% block body %}
+    <h1>Edit UniqueContent</h1>
+
+    {{ include('unique_content/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_unique_content_index') }}">back to list</a>
+
+    {{ include('unique_content/_delete_form.html.twig') }}
+{% endblock %}

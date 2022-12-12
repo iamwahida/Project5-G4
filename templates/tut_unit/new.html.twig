@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New TutUnit{% endblock %}
+
+{% block body %}
+    <h1>Create new TutUnit</h1>
+
+    {{ include('tut_unit/_form.html.twig') }}
+
+    <a href="{{ path('app_tut_unit_index') }}">back to list</a>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New UniqueContent{% endblock %}
+
+{% block body %}
+    <h1>Create new UniqueContent</h1>
+
+    {{ include('unique_content/_form.html.twig') }}
+
+    <a href="{{ path('app_unique_content_index') }}">back to list</a>
+{% endblock %}

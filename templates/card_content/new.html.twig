@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New CardContent{% endblock %}
+
+{% block body %}
+    <h1>Create new CardContent</h1>
+
+    {{ include('card_content/_form.html.twig') }}
+
+    <a href="{{ path('app_card_content_index') }}">back to list</a>
+{% endblock %}
