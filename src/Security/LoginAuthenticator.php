@@ -47,7 +47,7 @@ class LoginAuthenticator extends AbstractLoginFormAuthenticator
         }
 
         // For example:
-        return new RedirectResponse($this->urlGenerator->generate('/card/content'));
+        return new RedirectResponse($this->urlGenerator->generate('app_card_content_index'));
         
     }
 
