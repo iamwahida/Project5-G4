@@ -16,9 +16,6 @@ class Review
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 31)]
-    private ?string $subject = null;
-
     #[ORM\Column]
     private ?int $grade = null;
 
@@ -28,26 +25,16 @@ class Review
     #[ORM\ManyToOne]
     private ?student $fk_student = null;
 
+    #[ORM\ManyToOne]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?subject $fk_subject = null;
+
    
     public function getId(): ?int
     {
         return $this->id;
     }
 
-
- 
-
-    public function getSubject(): ?string
-    {
-        return $this->subject;
-    }
-
-    public function setSubject(string $subject): self
-    {
-        $this->subject = $subject;
-
-        return $this;
-    }
 
     public function getGrade(): ?int
     {
@@ -81,6 +68,18 @@ class Review
     public function setFkStudent(?student $fk_student): self
     {
         $this->fk_student = $fk_student;
+
+        return $this;
+    }
+
+    public function getFkSubject(): ?subject
+    {
+        return $this->fk_subject;
+    }
+
+    public function setFkSubject(?subject $fk_subject): self
+    {
+        $this->fk_subject = $fk_subject;
 
         return $this;
     }
