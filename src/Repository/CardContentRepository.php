@@ -53,13 +53,6 @@ class CardContentRepository extends ServiceEntityRepository
 
     }
 
-    public function getAllUniversities(){
-        
-
-        
-        
-        return $query->getResult();
-    }
 //    /**
 //     * @return CardContent[] Returns an array of CardContent objects
 //     */
