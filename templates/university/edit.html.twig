@@ -3,11 +3,11 @@
 {% block title %}Edit University{% endblock %}
 
 {% block body %}
-    <h1>Edit University</h1>
+<h1 style="margin:20px;">Edit University</h1>
 
-    {{ include('university/_form.html.twig', {'button_label': 'Update'}) }}
-
-    <a href="{{ path('app_university_index') }}">back to list</a>
-
-    {{ include('university/_delete_form.html.twig') }}
+<div class="container">
+    <div class="mb-2">{{ include('university/_form.html.twig', {'button_label': 'Update'}) }}</div>
+    <div>{{ include('university/_delete_form.html.twig') }}</div>
+    <div><a style="background-color: rgb(163, 193, 201);" class="btn mt-2" role="button" href="{{ path('app_university_index') }}">Back to list</a></div>
+</div>
 {% endblock %}

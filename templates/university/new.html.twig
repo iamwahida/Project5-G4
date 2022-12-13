@@ -3,9 +3,13 @@
 {% block title %}New University{% endblock %}
 
 {% block body %}
-    <h1>Create new University</h1>
+<h1 style="margin:20px;">Create new University</h1>
 
+<div class="container">
     {{ include('university/_form.html.twig') }}
 
-    <a href="{{ path('app_university_index') }}">back to list</a>
+    <a class="card-link btn mt-2" role="button" 
+style="background-color: rgb(163, 193, 201);" href="{{ path('app_university_index') }}">Go back to the list.</a>
+</div>
+
 {% endblock %}

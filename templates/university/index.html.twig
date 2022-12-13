@@ -3,33 +3,32 @@
 {% block title %}University index{% endblock %}
 
 {% block body %}
-    <h1>University index</h1>
+<h1 class="text-center mt-5 mb-5">University</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>University_name</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
+<div class="container d-flex justify-content-center">
+<div class="row">
+    <div class="col-sm-6">
         {% for university in universities %}
-            <tr>
-                <td>{{ university.id }}</td>
-                <td>{{ university.universityName }}</td>
-                <td>
-                    <a href="{{ path('app_university_show', {'id': university.id}) }}">show</a>
-                    <a href="{{ path('app_university_edit', {'id': university.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="3">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('app_university_new') }}">Create new</a>
+        <div class="card border-dark mb-3 shadow-sm p-3 mb-5 bg-body rounded" style="width: 18rem;">
+            <div class="card-header fw-bold">{{ university.universityName }}</div>
+            <div class="card-body">
+              {# <h6 class="card-subtitle mb-2 text-muted">{{ subject.id }}</h6> #}
+             
+                    <a style="background-color: rgb(241, 158, 158);" 
+                    href="{{ path('app_university_show', {'id': university.id}) }}" class="card-link btn" role="button">Details</a>
+               <br><br>
+                    <a style="background-color: rgb(116, 200, 221);"
+                     href="{{ path('app_university_edit', {'id': university.id}) }}" class="card-link btn " role="button">Edit</a>
+            </div>
+            {% else %}
+            <div>No records found.</div>
+            {% endfor %}
+          </div>
+          <div class="container d-flex justify-content-center">
+            <a class="card-link btn btn-outline-dark mt-2" role="button" 
+             href="{{ path('app_university_new') }}">Create new</a>
+            </div>
+    </div>
+</div>
+</div>
 {% endblock %}

@@ -3,11 +3,11 @@
 {% block title %}Edit Subject{% endblock %}
 
 {% block body %}
-    <h1>Edit Subject</h1>
+<h1 style="margin:20px;">Edit Subject</h1>
 
-    {{ include('subject/_form.html.twig', {'button_label': 'Update'}) }}
+<div class="container">
+    <div class="mb-2">{{ include('subject/_form.html.twig', {'button_label': 'Update'}) }}</div>
+    <div>{{ include('subject/_delete_form.html.twig') }}</div>
+</div>
 
-    <a href="{{ path('app_subject_index') }}">back to list</a>
-
-    {{ include('subject/_delete_form.html.twig') }}
 {% endblock %}
