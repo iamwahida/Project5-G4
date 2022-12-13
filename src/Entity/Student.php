@@ -25,6 +25,10 @@ class Student
     #[ORM\Column(length: 255)]
     private ?string $details = null;
 
+    #[ORM\OneToOne(cascade: ['persist', 'remove'])]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?User $fk_user = null;
+
 
     public function getId(): ?int
     {
