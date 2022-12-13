@@ -29,3 +29,113 @@
   width: 80px;
   transition: 1s;
 }/*# sourceMappingURL=style.css.map */
+
+
+
+/* ---------------login */
+
+body{
+  /* background-color: #dee9ff;
+   */
+background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1800' height='1000' preserveAspectRatio='none' viewBox='0 0 1800 1000'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1029%26quot%3b)' fill='none'%3e%3crect width='1800' height='1000' x='0' y='0' fill='rgba(255%2c 255%2c 255%2c 1)'%3e%3c/rect%3e%3cpath d='M466.154%2c561.441C521.592%2c561.567%2c574.389%2c535.99%2c603.175%2c488.611C633.095%2c439.366%2c639.147%2c376.107%2c608.345%2c327.408C579.199%2c281.328%2c520.623%2c269.526%2c466.154%2c271.975C416.537%2c274.205%2c370.961%2c297.233%2c344.506%2c339.268C316.074%2c384.445%2c304.568%2c441.173%2c330.204%2c487.993C356.717%2c536.415%2c410.949%2c561.316%2c466.154%2c561.441' fill='rgba(205%2c 29%2c 0%2c 0.59)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M1616.57%2c983.695C1711.757%2c982.546%2c1812.811%2c964.593%2c1863.736%2c884.166C1917.695%2c798.947%2c1911.777%2c687.427%2c1858.322%2c601.89C1807.778%2c521.011%2c1711.863%2c492.598%2c1616.57%2c488.658C1511.722%2c484.323%2c1394.2%2c492.042%2c1337.525%2c580.359C1277.588%2c673.759%2c1295.712%2c798.994%2c1358.853%2c890.259C1414.575%2c970.8%2c1518.639%2c984.877%2c1616.57%2c983.695' fill='rgba(205%2c 29%2c 0%2c 0.59)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M1651.123%2c1083.632C1733.317%2c1087.719%2c1796.164%2c1019.063%2c1837.045%2c947.639C1877.6%2c876.784%2c1897.645%2c792.187%2c1859.142%2c720.197C1818.663%2c644.512%2c1736.952%2c600.315%2c1651.123%2c600.012C1564.762%2c599.707%2c1477.485%2c640.657%2c1440.547%2c718.721C1407.128%2c789.347%2c1455.637%2c862.939%2c1494.689%2c930.614C1533.764%2c998.328%2c1573.039%2c1079.749%2c1651.123%2c1083.632' fill='rgba(205%2c 29%2c 0%2c 0.59)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M1576.603%2c592.274C1682.818%2c597.939%2c1792.385%2c562.702%2c1849.329%2c472.863C1910.014%2c377.121%2c1915.751%2c250.26%2c1853.38%2c155.608C1795.751%2c68.152%2c1680.931%2c49.741%2c1576.603%2c58.982C1488.978%2c66.744%2c1417.884%2c122.193%2c1373.456%2c198.118C1328.488%2c274.966%2c1309.211%2c367.088%2c1350.002%2c446.233C1394.126%2c531.844%2c1480.427%2c587.145%2c1576.603%2c592.274' fill='rgba(205%2c 29%2c 0%2c 0.59)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M1014.495%2c1227.573C1091.692%2c1227.954%2c1165.66%2c1191.222%2c1204.37%2c1124.431C1243.186%2c1057.457%2c1237.46%2c975.45%2c1199.822%2c907.808C1161.027%2c838.088%2c1094.203%2c786.746%2c1014.495%2c783.194C928.401%2c779.357%2c839.695%2c814.397%2c798.164%2c889.908C757.781%2c963.332%2c782.633%2c1052.016%2c827.837%2c1122.574C869.112%2c1186.999%2c937.983%2c1227.196%2c1014.495%2c1227.573' fill='rgba(205%2c 29%2c 0%2c 0.59)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M81.54%2c1006.767C140.711%2c1006.772%2c206.354%2c997.422%2c235.606%2c945.987C264.648%2c894.923%2c240.752%2c832.823%2c208.327%2c783.837C179.71%2c740.603%2c133.24%2c717.127%2c81.54%2c713.23C20.304%2c708.614%2c-49.436%2c710.639%2c-83.327%2c761.85C-119.691%2c816.797%2c-109.276%2c891.302%2c-72.481%2c945.961C-39.445%2c995.037%2c22.381%2c1006.762%2c81.54%2c1006.767' fill='rgba(205%2c 29%2c 0%2c 0.59)' class='triangle-float2'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1029'%3e%3crect width='1800' height='1000' fill='white'%3e%3c/rect%3e%3c/mask%3e%3cstyle%3e %40keyframes float1 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-10px%2c 0)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float1 %7b animation: float1 5s infinite%3b %7d %40keyframes float2 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-5px%2c -5px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float2 %7b animation: float2 4s infinite%3b %7d %40keyframes float3 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(0%2c -10px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float3 %7b animation: float3 6s infinite%3b %7d %3c/style%3e%3c/defs%3e%3c/svg%3e");
+}
+.registration-form{
+padding: 50px 0;
+}
+
+.registration-form form{
+  background-color: #fff;
+  max-width: 600px;
+  margin: auto;
+  padding: 50px 70px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.075);
+}
+
+.registration-form .form-icon{
+text-align: center;
+  background-color: #ff7158;
+  border-radius: 50%;
+  font-size: 40px;
+  color: white;
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  margin-bottom: 50px;
+  line-height: 100px;
+}
+
+.registration-form .item{
+border-radius: 20px;
+  margin-bottom: 25px;
+  padding: 10px 20px;
+}
+
+.registration-form .create-account{
+  border-radius: 30px;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #ff7158;
+  border: none;
+  color: white;
+  margin-top: 20px;
+}
+
+.registration-form .social-media{
+  max-width: 600px;
+  background-color: #fff;
+  margin: auto;
+  padding: 35px 0;
+  text-align: center;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  color: #9fadca;
+  border-top: 1px solid #dee9ff;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.075);
+}
+
+.registration-form .social-icons{
+  margin-top: 30px;
+  margin-bottom: 16px;
+}
+
+.registration-form .social-icons a{
+  font-size: 23px;
+  margin: 0 3px;
+  color: #5691ff;
+  border: 1px solid;
+  border-radius: 50%;
+  width: 45px;
+  display: inline-block;
+  height: 45px;
+  text-align: center;
+  background-color: #fff;
+  line-height: 45px;
+}
+
+.registration-form .social-icons a:hover{
+  text-decoration: none;
+  opacity: 0.6;
+}
+
+@media (max-width: 576px) {
+  .registration-form form{
+      padding: 50px 20px;
+  }
+
+  .registration-form .form-icon{
+      width: 70px;
+      height: 70px;
+      font-size: 30px;
+      line-height: 70px;
+  }
+}
+
+.login-title{
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 60px;
+  color: #6b7589;
+}
