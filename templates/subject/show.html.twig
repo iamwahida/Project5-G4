@@ -3,24 +3,28 @@
 {% block title %}Subject{% endblock %}
 
 {% block body %}
-    <h1>Subject</h1>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ subject.id }}</td>
-            </tr>
-            <tr>
-                <th>Subject_name</th>
-                <td>{{ subject.subjectName }}</td>
-            </tr>
-        </tbody>
-    </table>
+<h1 class="text-center mt-5 mb-5">Details</h1>
 
-    <a href="{{ path('app_subject_index') }}">back to list</a>
-
-    <a href="{{ path('app_subject_edit', {'id': subject.id}) }}">edit</a>
-
+<div class="container d-flex justify-content-center">
+<div class="row">
+    <div class="col-sm-6">
+        <div class="card border-dark mb-3 shadow-sm p-3 mb-5 bg-body rounded" style="width: 18rem;">
+            <div class="card-header fw-bold">{{ subject.subjectName }}</div>
+            <div class="card-body">
+              <h6 class="card-subtitle mb-2 text-muted">Subject ID: {{ subject.id }}</h6>
+              <br>
+                    <a style="background-color: rgb(241, 158, 158);" href="{{ path('app_subject_show', {'id': subject.id}) }}" class="card-link btn" role="button">Details</a>
+               <br><br>
+                    <a style="background-color: rgb(116, 200, 221);"  href="{{ path('app_subject_edit', {'id': subject.id}) }}" class="card-link btn " role="button">Edit</a>
+               <br><br>
+                    <a class="card-link btn" role="button" style="background-color: rgb(163, 193, 201);" href="{{ path('app_subject_index') }}">Go back to the list.</a>
+            </div>
+          </div>
+    </div>
+</div>
+</div>
+<div class="container d-flex justify-content-center">
     {{ include('subject/_delete_form.html.twig') }}
+    </div>
 {% endblock %}

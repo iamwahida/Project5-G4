@@ -3,33 +3,31 @@
 {% block title %}Subject index{% endblock %}
 
 {% block body %}
-    <h1>Subject index</h1>
+    <h1 class="text-center mt-5 mb-5">All Subjects</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Subject_name</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for subject in subjects %}
-            <tr>
-                <td>{{ subject.id }}</td>
-                <td>{{ subject.subjectName }}</td>
-                <td>
-                    <a href="{{ path('app_subject_show', {'id': subject.id}) }}">show</a>
-                    <a href="{{ path('app_subject_edit', {'id': subject.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="3">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+    <div class="container d-flex justify-content-center">
+    <div class="row">
+        <div class="col-sm-6">
+            {% for subject in subjects %}
+            <div class="card border-dark mb-3 shadow-sm p-3 mb-5 bg-body rounded" style="width: 18rem;">
+                <div class="card-header fw-bold">{{ subject.subjectName }}</div>
+                <div class="card-body">
+                  {# <h6 class="card-subtitle mb-2 text-muted">{{ subject.id }}</h6> #}
+                 
+                        <a style="background-color: rgb(241, 158, 158);" href="{{ path('app_subject_show', {'id': subject.id}) }}" class="card-link btn" role="button">Details</a>
+                   <br><br>
+                        <a style="background-color: rgb(116, 200, 221);"  href="{{ path('app_subject_edit', {'id': subject.id}) }}" class="card-link btn " role="button">Edit</a>
+                </div>
+                {% else %}
+                <div>No records found.</div>
+                {% endfor %}
+              </div>
+              <div class="container d-flex justify-content-center">
+                <a class="card-link btn btn-outline-dark mt-2" role="button" 
+                 href="{{ path('app_subject_new') }}">Create new</a>
+                </div>
+        </div>
+    </div>
+</div>
 
-    <a href="{{ path('app_subject_new') }}">Create new</a>
 {% endblock %}
