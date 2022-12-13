@@ -10,12 +10,9 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
 class CardContentType extends AbstractType
-{
-    
+{    
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
-        
-        
         $builder
             ->add('card_title')
             ->add('card_text')

@@ -37,7 +37,6 @@ class CardContentController extends AbstractController
         return $this->renderForm('card_content/new.html.twig', [
             'card_content' => $cardContent,
             'form' => $form,
-            
         ]);
     }
 
