@@ -16,9 +16,6 @@ class Review
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\OneToMany(mappedBy: 'review', targetEntity: student::class)]
-    private Collection $fk_student;
-
     #[ORM\Column(length: 31)]
     private ?string $subject = null;
 
@@ -28,45 +25,17 @@ class Review
     #[ORM\Column(type: Types::TEXT)]
     private ?string $review = null;
 
-    public function __construct()
-    {
-        $this->fk_student = new ArrayCollection();
-    }
+    #[ORM\ManyToOne]
+    private ?student $fk_student = null;
 
+   
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    /**
-     * @return Collection<int, student>
-     */
-    public function getFkStudent(): Collection
-    {
-        return $this->fk_student;
-    }
 
-    public function addFkStudent(student $fkStudent): self
-    {
-        if (!$this->fk_student->contains($fkStudent)) {
-            $this->fk_student->add($fkStudent);
-            $fkStudent->setReview($this);
-        }
-
-        return $this;
-    }
-
-    public function removeFkStudent(student $fkStudent): self
-    {
-        if ($this->fk_student->removeElement($fkStudent)) {
-            // set the owning side to null (unless already changed)
-            if ($fkStudent->getReview() === $this) {
-                $fkStudent->setReview(null);
-            }
-        }
-
-        return $this;
-    }
+ 
 
     public function getSubject(): ?string
     {
@@ -100,6 +69,18 @@ class Review
     public function setReview(string $review): self
     {
         $this->review = $review;
+
+        return $this;
+    }
+
+    public function getFkStudent(): ?student
+    {
+        return $this->fk_student;
+    }
+
+    public function setFkStudent(?student $fk_student): self
+    {
+        $this->fk_student = $fk_student;
 
         return $this;
     }

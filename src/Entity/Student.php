@@ -25,13 +25,6 @@ class Student
     #[ORM\Column(length: 255)]
     private ?string $details = null;
 
-    #[ORM\ManyToOne(inversedBy: 'fk_student')]
-    #[ORM\JoinColumn(nullable: false)]
-    private ?Review $review = null;
-
-    #[ORM\OneToOne(cascade: ['persist', 'remove'])]
-    #[ORM\JoinColumn(nullable: false)]
-    private ?user $fk_user = null;
 
     public function getId(): ?int
     {
