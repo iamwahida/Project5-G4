@@ -5,6 +5,7 @@ namespace App\Repository;
 use App\Entity\CardContent;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use SebastianBergmann\Environment\Console;
 
 /**
  * @extends ServiceEntityRepository<CardContent>
@@ -39,6 +40,26 @@ class CardContentRepository extends ServiceEntityRepository
         }
     }
 
+    public function getUniversity(int $fk_university){
+        $entityManager = $this->getEntityManager();
+
+        $query = $entityManager->createQuery(
+            'SELECT *
+            FROM App\Entity\University uni
+            WHERE uni.id == :fk_university'
+        )->setParameter('fk_university', $fk_university);
+        
+        return $query->getResult();
+
+    }
+
+    public function getAllUniversities(){
+        
+
+        
+        
+        return $query->getResult();
+    }
 //    /**
 //     * @return CardContent[] Returns an array of CardContent objects
 //     */

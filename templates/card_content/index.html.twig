@@ -3,37 +3,42 @@
 {% block title %}CardContent index{% endblock %}
 
 {% block body %}
-    <h1>CardContent index</h1>
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Card_title</th>
-                <th>Card_text</th>
-                <th>Card_pic</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
+<div class="container">
+    <h1 class="text-center my-2">Course Catalogue</h1>
+    <div class="row">
+        <div class="col text-center">
+            <a class="btn btn-success text-center w-25 my-1" href="{{ path('app_card_content_new') }}">Create a new Course!</a>
+        </div>    
+    </div>
+    <div class="row">
         {% for card_content in card_contents %}
-            <tr>
-                <td>{{ card_content.id }}</td>
-                <td>{{ card_content.cardTitle }}</td>
-                <td>{{ card_content.cardText }}</td>
-                <td>{{ card_content.cardPic }}</td>
-                <td>
-                    <a href="{{ path('app_card_content_show', {'id': card_content.id}) }}">show</a>
-                    <a href="{{ path('app_card_content_edit', {'id': card_content.id}) }}">edit</a>
-                </td>
-            </tr>
+        <div class="col-4 my-3">
+            <div class="card">
+                <img class="card-img-top" src="{{ card_content.cardPic }}" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">{{ card_content.cardTitle }}</h5>
+                    <p class="card-text">{{ card_content.cardText }}</p>
+                    <div class="row">
+                    <div class="col-4">
+                        <a href="{{ path('app_card_content_show', {'id': card_content.id}) }}" class="btn btn-secondary w-100">Info</a>
+                    </div>
+                    <div class="col-4">
+                        <a href="{{ path('app_card_content_edit', {'id': card_content.id}) }}" class="btn btn-warning w-100">Edit</a>
+                    </div>
+                    <div class="col-4">
+                        {{ include('card_content/_delete_form.html.twig') }}
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
         {% else %}
-            <tr>
-                <td colspan="5">no records found</td>
-            </tr>
+            <div class="text-center my-2">There are currently no Courses available, Check again later. &#128521;</div>
         {% endfor %}
-        </tbody>
-    </table>
+    </div>
+</div>
+        
 
-    <a href="{{ path('app_card_content_new') }}">Create new</a>
+    
 {% endblock %}
