@@ -53,3 +53,4 @@ class RegistrationFormType extends AbstractType
         ]);
     }
 }
+?>
