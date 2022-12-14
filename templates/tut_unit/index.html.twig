@@ -33,16 +33,15 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_tut_unit_new') }}">Create new</a>
 
-
-
-
-
+    {# <a href="{{ path('app_tut_unit_new/{day | date('dmY')/time') }}">Create new datetime</a> #}
 
 
     <div class="container">
-		<div class="row my-3 mx-5">
+		{# Feature in the future to go to next week etc. #}
+        
+        {# 
+        <div class="row my-3 mx-5">
 			<div class="offset-1 col-3">
 				<a class="btn btn-secondary w-100">&lt; Week before</a>
 			</div>
@@ -50,6 +49,9 @@
 				<a class="btn btn-secondary w-100">Next week &gt;</a>
 			</div>
 		</div>
+         #}
+
+
         <h3 class="text-center"> {{start_date | date ('d.m.Y')}} - {{end_date | date ('d.m.Y')}}</h3>
         
 		<div class="row my-3 h5">
@@ -62,26 +64,63 @@
                 </div>
             {% endfor %}
 		</div>
-		{% for time in 07..23 %}
+        
+		{% for time in 7..23 %}
 			{% for day in week %}
+            
+            {# If it is a monday start a new row and add the time as first field #}
 				{% if (day | date('D') == 'Mon') %}
 					<div class="row row-cols-7 border-bottom">
 						<div class="col text-center d-block w-100">
-							{{time}}:00
+                            {% if time < 10 %}
+                                0{{time}}:00
+                            {% else %}
+                                {{time}}:00
+                            {% endif %}
 						</div>
-                        <div class="col text-center">
-                            <a href="new" class="text-white d-block bg-primary text-decoration-none w-100">+</a>
+                {% endif %}
+               
+                {% if time < 10 %}
+                    {% set timeString = 0 ~ time %}
+                {% else %}
+                    {% set timeString = time %}
+                {% endif %}
+                {# Create/Edit Button to fill fields #}
+                 {% set found = false %}
+                    {% set appointmentId = null %}
+
+                {% for appointment in appointments %}
+                {# {{day  ~ " " ~ timeString ~ ":00"}}
+                {{(appointment.datetime) | date('d-m-Y H:i')}}  #}
+                    {% if (day  ~ " " ~ timeString ~ ":00") == (appointment.datetime | date('d-m-Y H:i')) %}
+                        {% set found = true %}
+                        {% set appointmentId = appointment.id %}
+                    {% endif %}                       
+                {% endfor %}
+                {% if found == true %}
+                    <div class="col text-center">
+                            <a href="{{appointmentId}}/edit" class="text-white d-block bg-success text-decoration-none w-100">Booked</a>
                         </div>
-				{% elseif (day | date('D') == 'Sun') %}
-					<div class="col text-center">
-                        <a href="new" class="text-white d-block bg-primary text-decoration-none w-100">+</a>
+                        {% else %}
+                             <div class="col text-center">
+						    <a href="new/{{day}}/{{time}}" class="text-white d-block bg-primary text-decoration-none w-100">+</a>
+					    </div>
+                {% endif %}
+                
+                {# {% if(day  ~ " " ~ time ~ ":00") in appointments %}
+                    {{ (day  ~ " " ~ time ~ ":00") }} #}
+                    
+                {# {% if (day | date('d-m-Y H:i:s')) in appointments %} #}
+                {# {% endif %} #}
+                
+                    
+
+
+                    
+                {# If the date is a Sunday end the row #}
+                {% if (day | date('D') == 'Sun') %}
                     </div>
-                    </div>
-				{% else %}
-					<div class="col text-center">
-						<a href="new" class="text-white d-block bg-primary text-decoration-none w-100">+</a>
-					</div>
-				{% endif %}
+                {% endif %}
 			{% endfor %}
 		{% endfor %}
 	</div>
