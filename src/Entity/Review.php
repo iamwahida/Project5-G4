@@ -23,11 +23,11 @@ class Review
     private ?string $review = null;
 
     #[ORM\ManyToOne]
-    private ?student $fk_student = null;
+    private ?Student $fk_student = null;
 
     #[ORM\ManyToOne]
     #[ORM\JoinColumn(nullable: false)]
-    private ?subject $fk_subject = null;
+    private ?Subject $fk_subject = null;
 
    
     public function getId(): ?int
@@ -60,24 +60,24 @@ class Review
         return $this;
     }
 
-    public function getFkStudent(): ?student
+    public function getFkStudent(): ?Student
     {
         return $this->fk_student;
     }
 
-    public function setFkStudent(?student $fk_student): self
+    public function setFkStudent(?Student $fk_student): self
     {
         $this->fk_student = $fk_student;
 
         return $this;
     }
 
-    public function getFkSubject(): ?subject
+    public function getFkSubject(): ?Subject
     {
         return $this->fk_subject;
     }
 
-    public function setFkSubject(?subject $fk_subject): self
+    public function setFkSubject(?Subject $fk_subject): self
     {
         $this->fk_subject = $fk_subject;
 
