@@ -2,7 +2,9 @@
 
 namespace App\Form;
 
+use App\Entity\Subject;
 use App\Entity\CardContent;
+use App\Entity\University;
 use App\Repository\CardContentRepository;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -10,6 +12,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Validator\Constraints\File;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 class CardContentType extends AbstractType
 {    
@@ -19,7 +22,7 @@ class CardContentType extends AbstractType
             ->add('card_title')
             ->add('card_text')
             ->add('card_pic', FileType::class,[
-                'label' => 'card_pic (PDF file)',
+                'label' => 'image (PDF file)',
                 'mapped' => false,
                 'required' => false,
                 'constraints' => [
@@ -34,8 +37,11 @@ class CardContentType extends AbstractType
                     ])
                 ]
             ])
-            ->add('fk_university', ChoiceType::class, ['choices' => ["1" => "TU Wien"], 'attr' => ['class' => 'form-control my-1 mb-2 w-50']])
-            ->add('fk_subject', ChoiceType::class, ['choices' => ["Math" => "1", "Biology" => "2"], 'attr' => ['class' => 'form-control my-1 mb-2 w-50']])
+            ->add('fk_university', EntityType::class,
+             ['class' => University::class,'choice_label' => 'universityName', 'attr' => ['class' => 'form-control my-1 mb-2 w-50']])
+
+            ->add('fk_subject', EntityType::class, 
+            ['class' => Subject::class,'choice_label' =>'subject_name', 'attr' => ['class' => 'form-control my-1 mb-2 w-50']])
         ;
     }
 
