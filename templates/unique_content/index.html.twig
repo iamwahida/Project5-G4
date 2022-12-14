@@ -1,10 +1,10 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}UniqueContent index{% endblock %}
+{% block title %}Unique Content{% endblock %}
 
 {% block body %}
-    <h1>UniqueContent index</h1>
-
+    <h3 class="text-center mb-4">Unique Content</h3>
+    <div class="container">
     <table class="table">
         <thead>
             <tr>
@@ -27,8 +27,8 @@
                 <td>{{ unique_content.tutPic }}</td>
                 <td>{{ unique_content.bgPic }}</td>
                 <td>
-                    <a href="{{ path('app_unique_content_show', {'id': unique_content.id}) }}">show</a>
-                    <a href="{{ path('app_unique_content_edit', {'id': unique_content.id}) }}">edit</a>
+                    <a class="card-link btn btn-outline-success mt-2" role="button" href="{{ path('app_unique_content_show', {'id': unique_content.id}) }}">Show</a>
+                    <a class="card-link btn btn-outline-primary mt-2" role="button" href="{{ path('app_unique_content_edit', {'id': unique_content.id}) }}">Edit</a>
                 </td>
             </tr>
         {% else %}
@@ -38,6 +38,7 @@
         {% endfor %}
         </tbody>
     </table>
+    <a class="card-link btn btn-outline-dark mt-2" role="button" href="{{ path('app_unique_content_new') }}">Create new</a>
+</div>
 
-    <a href="{{ path('app_unique_content_new') }}">Create new</a>
 {% endblock %}

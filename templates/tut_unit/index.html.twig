@@ -21,8 +21,8 @@
                 <td>{{ tut_unit.available ? 'Yes' : 'No' }}</td>
                 <td>{{ tut_unit.datetime ? tut_unit.datetime|date('Y-m-d H:i:s') : '' }}</td>
                 <td>
-                    <a href="{{ path('app_tut_unit_show', {'id': tut_unit.id}) }}">show</a>
-                    <a href="{{ path('app_tut_unit_edit', {'id': tut_unit.id}) }}">edit</a>
+                    <a class="card-link btn btn-outline-success mt-2" role="button" href="{{ path('app_tut_unit_show', {'id': tut_unit.id}) }}">show</a>
+                    <a class="card-link btn btn-outline-primary mt-2" role="button" href="{{ path('app_tut_unit_edit', {'id': tut_unit.id}) }}">edit</a>
                 </td>
             </tr>
         {% else %}
@@ -33,7 +33,7 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_tut_unit_new') }}">Create new</a>
+    <a class="card-link btn btn-outline-dark mt-2" role="button" href="{{ path('app_tut_unit_new') }}">Create new</a>
 
 
 
