@@ -17,20 +17,20 @@
         </div>
     {% endif %}
 
-    <div class="registration-form" style="    background-color: #fff;
-    max-width: 600px;
-    margin: auto;
-    padding: 50px 70px;
-    border-top-left-radius: 30px;
-    border-top-right-radius: 30px;
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.075);">
-        <form style="    background-color: #fff;
-    max-width: 600px;
-    margin: auto;
-    padding: 50px 70px;
-    border-top-left-radius: 30px;
-    border-top-right-radius: 30px;
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.075);">
+            {# <div class="registration-form" style="    background-color: #fff;
+            max-width: 600px;
+            margin: auto;
+            padding: 50px 70px;
+            border-top-left-radius: 30px;
+            border-top-right-radius: 30px;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.075);">
+                <form style="    background-color: #fff;
+            max-width: 600px;
+            margin: auto;
+            padding: 50px 70px;
+            border-top-left-radius: 30px;
+            border-top-right-radius: 30px;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.075);">
             <div class="form-icon">
                 <span><i class="icon icon-user"></i></span>
             </div>
@@ -44,13 +44,13 @@
                 <input for="inputPassword"type="password" name="password" id="inputPassword" placeholder="password" class="form-control item"autocomplete="current-password" required>
             </div>
 
-
+            
             <div class="form-group">
-                <a style="margin-left:125px" href="Reg.html" type="button" class="btn btn-block create-account">Login your Account</a>
+                <a style="margin-left:125px" href="card/content" type="button" class="btn btn-block create-account">Login your Account</a>
             </div>
             <input type="hidden" name="_csrf_token"
-   value="{{ csrf_token('authenticate') }}"
-> <br><br>
+                value="{{ csrf_token('authenticate') }}"
+            > <br><br>
         </form>
         <div class="social-media" style="  max-width: 600px;
   background-color: #fff;
@@ -76,6 +76,32 @@
             </div>
         </div>
     </div>
+</form> #}
+{% if app.user %}
+<div class="mb-3">
+    You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
+</div>
+{% endif %}
+<h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+<label for="inputEmail">Email</label>
+<input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control"   >
+<label for="inputPassword">Password</label>
+<input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+<input type="hidden" name="_csrf_token"
+   value="{{ csrf_token('authenticate') }}"
+>
+{#
+Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
+See https://symfony.com/doc/current/security/remember_me.html
+<div class="checkbox mb-3">
+    <label>
+        <input type="checkbox" name="_remember_me"> Remember me
+    </label>
+</div>
+#}
+<button class="btn btn-lg btn-primary" type="submit">
+Sign in
+</button>
 </form>
 
 <br><br><br><br><br><br><br>
