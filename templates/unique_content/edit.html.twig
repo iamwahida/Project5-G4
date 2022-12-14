@@ -9,10 +9,12 @@
 </div>
 
     <div class="container">
+        <div class="card border border-0" style="width: 600px;">
     {{ include('unique_content/_form.html.twig', {'button_label': 'Update'}) }}
-
-    <a class="btn btn-secondary mt-2 mb-2" role="button" href="{{ path('app_unique_content_index') }}">Back to the list</a>
-
+   
     {{ include('unique_content/_delete_form.html.twig') }}
+</div>
+<a class="btn btn-outline-secondary mt-2 mb-2" role="button" href="{{ path('app_unique_content_index') }}">Back to the list</a>
+
     </div>
 {% endblock %}

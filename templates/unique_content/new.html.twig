@@ -3,9 +3,15 @@
 {% block title %}New UniqueContent{% endblock %}
 
 {% block body %}
+<div class="container mt-3 mb-3">
     <h1>Create new UniqueContent</h1>
+    </div>
 
+<div class="container">
+    <div class="card border border-0" style="width: 600px;">
     {{ include('unique_content/_form.html.twig') }}
+    </div>
+    <a class="card-link btn btn-outline-secondary mt-2" role="button" href="{{ path('app_unique_content_index') }}">Back to list</a>
+</div>
 
-    <a href="{{ path('app_unique_content_index') }}">back to list</a>
 {% endblock %}
