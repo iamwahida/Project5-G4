@@ -50,25 +50,8 @@ class UniqueContentType extends AbstractType
                         'mimeTypesMessage' => 'Please upload a valid picture',
                     ])
                 ]
-            ] )
-            ->add('first_name' , TextType::class, [
-                'attr' => ['class' => 'form-control border border-dark', 'style' => 'margin-bottom:15px'],
-                ],
-               )
-            ->add('last_name', TextType::class, [
-                'attr' => ['class' => 'form-control border border-dark', 'style' => 'margin-bottom:15px'],
-                ],)
-            ->add('description', TextType::class, [
-                'attr' => ['class' => 'form-control border border-dark', 'style' => 'margin-bottom:15px'],
-                ],)
-            ->add('tut_pic', TextType::class, [
-                'attr' => ['class' => 'form-control border border-dark', 'style' => 'margin-bottom:15px'],
-                ],)
-            ->add('bg_pic', TextType::class, [
-                'attr' => ['class' => 'form-control border border-dark', 'style' => 'margin-bottom:15px'],
-                ],)
-        ;
-    }
+            ] );
+}
 
     public function configureOptions(OptionsResolver $resolver): void
     {
