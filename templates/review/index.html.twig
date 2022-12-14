@@ -23,8 +23,8 @@
                 <td>{{ review.grade }}</td>
                 <td>{{ review.review }}</td>
                 <td>
-                    <a href="{{ path('app_review_show', {'id': review.id}) }}">show</a>
-                    <a href="{{ path('app_review_edit', {'id': review.id}) }}">edit</a>
+                    <a class="card-link btn btn-outline-success mt-2" role="button" href="{{ path('app_review_show', {'id': review.id}) }}">show</a>
+                    <a class="card-link btn btn-outline-primary mt-2" role="button" href="{{ path('app_review_edit', {'id': review.id}) }}">edit</a>
                 </td>
             </tr>
         {% else %}
@@ -35,5 +35,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_review_new') }}">Create new</a>
+    <a class="card-link btn btn-outline-dark mt-2" role="button" href="{{ path('app_review_new') }}">Create new</a>
 {% endblock %}

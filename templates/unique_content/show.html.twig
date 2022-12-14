@@ -3,8 +3,11 @@
 {% block title %}UniqueContent{% endblock %}
 
 {% block body %}
+<div class="container mt-3 mb-3">
     <h1>UniqueContent</h1>
+</div>
 
+<div class="container">
     <table class="table">
         <tbody>
             <tr>
@@ -34,9 +37,11 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_unique_content_index') }}">back to list</a>
+    <a class="card-link btn btn-outline-secondary mt-2" role="button"  href="{{ path('app_unique_content_index') }}">Back to list</a>
 
-    <a href="{{ path('app_unique_content_edit', {'id': unique_content.id}) }}">edit</a>
+    <a class="card-link btn btn-outline-primary mt-2 mb-2" role="button"  href="{{ path('app_unique_content_edit', {'id': unique_content.id}) }}">Edit</a>
 
     {{ include('unique_content/_delete_form.html.twig') }}
+
+</div>
 {% endblock %}
