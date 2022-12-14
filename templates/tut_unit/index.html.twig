@@ -34,4 +34,55 @@
     </table>
 
     <a href="{{ path('app_tut_unit_new') }}">Create new</a>
+
+
+
+
+
+
+
+    <div class="container">
+		<div class="row my-3 mx-5">
+			<div class="offset-1 col-3">
+				<a class="btn btn-secondary w-100">&lt; Week before</a>
+			</div>
+			<div class="offset-4 col-3">
+				<a class="btn btn-secondary w-100">Next week &gt;</a>
+			</div>
+		</div>
+        <h3 class="text-center"> {{start_date | date ('d.m.Y')}} - {{end_date | date ('d.m.Y')}}</h3>
+        
+		<div class="row my-3 h5">
+			<div class="col text-center">
+				Time:
+			</div>
+			{% for day in week %}
+                <div class="col text-center">
+                    {{ day | date('D')}}
+                </div>
+            {% endfor %}
+		</div>
+		{% for time in 07..23 %}
+			{% for day in week %}
+				{% if (day | date('D') == 'Mon') %}
+					<div class="row row-cols-7 border-bottom">
+						<div class="col text-center d-block w-100">
+							{{time}}:00
+						</div>
+                        <div class="col text-center">
+                            <a href="new" class="text-white d-block bg-primary text-decoration-none w-100">+</a>
+                        </div>
+				{% elseif (day | date('D') == 'Sun') %}
+					<div class="col text-center">
+                        <a href="new" class="text-white d-block bg-primary text-decoration-none w-100">+</a>
+                    </div>
+                    </div>
+				{% else %}
+					<div class="col text-center">
+						<a href="new" class="text-white d-block bg-primary text-decoration-none w-100">+</a>
+					</div>
+				{% endif %}
+			{% endfor %}
+		{% endfor %}
+	</div>
 {% endblock %}

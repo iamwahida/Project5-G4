@@ -22,12 +22,12 @@ class TutUnit
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
     private ?\DateTimeInterface $datetime = null;
 
-    #[ORM\ManyToMany(targetEntity: student::class)]
+    #[ORM\ManyToMany(targetEntity: Student::class)]
     private Collection $fk_student;
 
     #[ORM\OneToOne(cascade: ['persist', 'remove'])]
     #[ORM\JoinColumn(nullable: false)]
-    private ?subject $fk_subject = null;
+    private ?Subject $fk_subject = null;
 
     #[ORM\OneToOne(cascade: ['persist', 'remove'])]
     #[ORM\JoinColumn(nullable: false)]
@@ -68,14 +68,14 @@ class TutUnit
     }
 
     /**
-     * @return Collection<int, student>
+     * @return Collection<int, Student>
      */
     public function getFkStudent(): Collection
     {
         return $this->fk_student;
     }
 
-    public function addFkStudent(student $fkStudent): self
+    public function addFkStudent(Student $fkStudent): self
     {
         if (!$this->fk_student->contains($fkStudent)) {
             $this->fk_student->add($fkStudent);
@@ -84,19 +84,19 @@ class TutUnit
         return $this;
     }
 
-    public function removeFkStudent(student $fkStudent): self
+    public function removeFkStudent(Student $fkStudent): self
     {
         $this->fk_student->removeElement($fkStudent);
 
         return $this;
     }
 
-    public function getFkSubject(): ?subject
+    public function getFkSubject(): ?Subject
     {
         return $this->fk_subject;
     }
 
-    public function setFkSubject(subject $fk_subject): self
+    public function setFkSubject(Subject $fk_subject): self
     {
         $this->fk_subject = $fk_subject;
 

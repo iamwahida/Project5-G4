@@ -25,14 +25,9 @@ class Student
     #[ORM\Column(length: 255)]
     private ?string $details = null;
 
-    #[ORM\ManyToOne(inversedBy: 'fk_student')]
-    #[ORM\JoinColumn(nullable: false)]
-    private ?Review $review = null;
-
     #[ORM\OneToOne(cascade: ['persist', 'remove'])]
     #[ORM\JoinColumn(nullable: false)]
-    private ?user $fk_user = null;
-
+    private ?User $fk_user = null;
     public function getId(): ?int
     {
         return $this->id;
@@ -86,24 +81,12 @@ class Student
         return $this;
     }
 
-    public function getReview(): ?Review
-    {
-        return $this->review;
-    }
-
-    public function setReview(?Review $review): self
-    {
-        $this->review = $review;
-
-        return $this;
-    }
-
-    public function getFkUser(): ?user
+    public function getFkUser(): ?User
     {
         return $this->fk_user;
     }
 
-    public function setFkUser(user $fk_user): self
+    public function setFkUser(User $fk_user): self
     {
         $this->fk_user = $fk_user;
 

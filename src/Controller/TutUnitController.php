@@ -4,6 +4,9 @@ namespace App\Controller;
 
 use App\Entity\TutUnit;
 use App\Form\TutUnitType;
+use App\Controller\DatePeriod;
+use App\Controller\DateTime;
+use App\Controller\DateInterval;
 use App\Repository\TutUnitRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -15,9 +18,24 @@ class TutUnitController extends AbstractController
 {
     #[Route('/', name: 'app_tut_unit_index', methods: ['GET'])]
     public function index(TutUnitRepository $tutUnitRepository): Response
-    {
+    { 
+        $start_date = date('d-m-Y', strtotime('this week Monday'));
+        $end_date = date('d-m-Y', strtotime('this week Sunday'));
+
+        $start_date_new = new \Datetime('this week Monday');
+        $end_date_new = new \Datetime('this week Sunday');
+
+        $week = [];
+
+        for($i = $start_date_new; $i <= $end_date_new; $i->modify('+1 day')){
+            array_push($week, $i->format('d-m-Y'));
+        }
+
         return $this->render('tut_unit/index.html.twig', [
             'tut_units' => $tutUnitRepository->findAll(),
+            'start_date' => $start_date,
+            'end_date' => $end_date,
+            'week' => $week
         ]);
     }
 
