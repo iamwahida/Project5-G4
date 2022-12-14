@@ -17,6 +17,7 @@ class UniqueContentType extends AbstractType
     {
         $builder
 <<<<<<< HEAD
+<<<<<<< HEAD
             ->add('first_name')
             ->add('last_name')
             ->add('description')
@@ -70,6 +71,13 @@ class UniqueContentType extends AbstractType
                 'attr' => ['class' => 'form-control border border-dark', 'style' => 'margin-bottom:15px'],
                 ],)
 >>>>>>> b4ad69b84ce851aaae3f59c38b36491851a675da
+=======
+            ->add('first_name')
+            ->add('last_name')
+            ->add('description')
+            ->add('tut_pic')
+            ->add('bg_pic')
+>>>>>>> 0d1f2d9c50f1df5b8ebc49f8c64a4d2d9f4aac72
         ;
     }
 
