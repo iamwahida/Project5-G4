@@ -3,9 +3,16 @@
 {% block title %}New TutUnit{% endblock %}
 
 {% block body %}
+<div class="container">
     <h1>Create new TutUnit</h1>
+</div>
 
+<div class="container">
+    <div class="card border border-0" style="width: 400px;">
     {{ include('tut_unit/_form.html.twig') }}
+</div>
+<a class="card-link btn btn-outline-secondary mt-3" role="button" href="{{ path('app_tut_unit_index') }}">Back to list</a>
 
-    <a href="{{ path('app_tut_unit_index') }}">back to list</a>
+</div>
+
 {% endblock %}

@@ -11,20 +11,22 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
-
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 
 class TutUnitType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('available')
-            ->add('datetime', DateTimeType::class, ['attr'=>['value' => 'datetime']])
+            ->add('available', CheckboxType::class, [
+                'attr' => ['style' => 'margin-bottom:15px; margin-left:15px', 'class' => 'form-check-input border border-dark p-2 mb-3', 'type' => 'checkbox']
+            ])
+            ->add('datetime', DateTimeType::class, ['attr'=>['value' => 'datetime','class' => 'form-control border border-dark p-2 mb-3' ]])
             
             ->add('fk_subject', EntityType::class,
-            ['class' => Subject::class,'choice_label' => 'subjectName'])
+            ['class' => Subject::class,'choice_label' => 'subjectName', 'attr' => ['class' => 'form-control border border-dark p-2 mb-3'] ])
             ->add('fk_university', EntityType::class,
-            ['class' => University::class,'choice_label' => 'universityName'])
+            ['class' => University::class,'choice_label' => 'universityName', 'attr' => ['class' => 'form-control border border-dark p-2 mb-3']])
         ;
     }
 

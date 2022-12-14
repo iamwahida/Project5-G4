@@ -3,35 +3,7 @@
 {% block title %}TutUnit index{% endblock %}
 
 {% block body %}
-    <h1>TutUnit index</h1>
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Available</th>
-                <th>Datetime</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for tut_unit in tut_units %}
-            <tr>
-                <td>{{ tut_unit.id }}</td>
-                <td>{{ tut_unit.available ? 'Yes' : 'No' }}</td>
-                <td>{{ tut_unit.datetime ? tut_unit.datetime|date('Y-m-d H:i:s') : '' }}</td>
-                <td>
-                    <a class="card-link btn btn-outline-success mt-2" role="button" href="{{ path('app_tut_unit_show', {'id': tut_unit.id}) }}">show</a>
-                    <a class="card-link btn btn-outline-primary mt-2" role="button" href="{{ path('app_tut_unit_edit', {'id': tut_unit.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="4">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+    <h1 class="text-center mb-5">TutUnit index</h1>
 
 
     {# <a href="{{ path('app_tut_unit_new/{day | date('dmY')/time') }}">Create new datetime</a> #}
@@ -51,6 +23,7 @@
 		</div>
          #}
 
+         
 
         <h3 class="text-center"> {{start_date | date ('d.m.Y')}} - {{end_date | date ('d.m.Y')}}</h3>
         
@@ -121,4 +94,34 @@
 			{% endfor %}
 		{% endfor %}
 	</div>
+
+    <div class="container d-flex justify-content-center">
+    <table class="table mt-4 mb-4">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Available</th>
+                <th>Datetime</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for tut_unit in tut_units %}
+            <tr>
+                <td>{{ tut_unit.id }}</td>
+                <td>{{ tut_unit.available ? 'Yes' : 'No' }}</td>
+                <td>{{ tut_unit.datetime ? tut_unit.datetime|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a class="card-link btn btn-outline-success mt-2" role="button" href="{{ path('app_tut_unit_show', {'id': tut_unit.id}) }}">show</a>
+                    <a class="card-link btn btn-outline-primary mt-2" role="button" href="{{ path('app_tut_unit_edit', {'id': tut_unit.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
 {% endblock %}
