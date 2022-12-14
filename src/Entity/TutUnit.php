@@ -25,11 +25,11 @@ class TutUnit
     #[ORM\ManyToMany(targetEntity: Student::class)]
     private Collection $fk_student;
 
-    #[ORM\OneToOne(cascade: ['persist', 'remove'])]
+    #[ORM\ManyToOne(cascade: ['persist', 'remove'])]
     #[ORM\JoinColumn(nullable: false)]
     private ?Subject $fk_subject = null;
 
-    #[ORM\OneToOne(cascade: ['persist', 'remove'])]
+    #[ORM\ManyToOne(cascade: ['persist', 'remove'])]
     #[ORM\JoinColumn(nullable: false)]
     private ?University $fk_university = null;
 
