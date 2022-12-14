@@ -3,8 +3,9 @@
 {% block title %}User index{% endblock %}
 
 {% block body %}
-    <h1>User index</h1>
+<h1 class="container mt-2 mb-2">Users</h1>
 
+<div class="container">
     <table class="table">
         <thead>
             <tr>
@@ -23,8 +24,8 @@
                 <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
                 <td>{{ user.password }}</td>
                 <td>
-                    <a class="card-link btn btn-outline-success mt-2" role="button" href="{{ path('app_user_show', {'id': user.id}) }}">show</a>
-                    <a class="card-link btn btn-outline-primary mt-2" role="button" href="{{ path('app_user_edit', {'id': user.id}) }}">edit</a>
+                    <a class="card-link btn btn-success mt-2" role="button" href="{{ path('app_user_show', {'id': user.id}) }}">Show</a>
+                    <a class="card-link btn btn-primary mt-2" role="button" href="{{ path('app_user_edit', {'id': user.id}) }}">Edit</a>
                 </td>
             </tr>
         {% else %}
@@ -34,6 +35,7 @@
         {% endfor %}
         </tbody>
     </table>
-
     <a class="card-link btn btn-outline-dark mt-2" role="button" href="{{ path('app_user_new') }}">Create new</a>
+</div>
+
 {% endblock %}
