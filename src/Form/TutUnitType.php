@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\TutUnit;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
@@ -14,7 +15,7 @@ class TutUnitType extends AbstractType
     {
         $builder
             ->add('available')
-            ->add('datetime')
+            ->add('datetime', DateTimeType::class, ['attr'=>['value' => 'datetime']])
             
             ->add('fk_subject', ChoiceType::class, ['choices' => ["Maths" => "1"]])
             ->add('fk_university', ChoiceType::class, ['choices' => ["TU Wien" => "1"]])

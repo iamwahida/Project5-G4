@@ -27,23 +27,38 @@ class TutUnitController extends AbstractController
 
         $week = [];
 
+
+        
+        // $appointmentArr = [];
+        // array_push($appointmentArr, )
+        $appointmentArr = $tutUnitRepository->findAll();
+        
         for($i = $start_date_new; $i <= $end_date_new; $i->modify('+1 day')){
             array_push($week, $i->format('d-m-Y'));
         }
-
         return $this->render('tut_unit/index.html.twig', [
             'tut_units' => $tutUnitRepository->findAll(),
             'start_date' => $start_date,
             'end_date' => $end_date,
-            'week' => $week
+            'week' => $week,
+            'appointments' => $appointmentArr
         ]);
+
+        
+        
     }
 
-    #[Route('/new', name: 'app_tut_unit_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, TutUnitRepository $tutUnitRepository): Response
+    #[Route('/new/{date}/{time}', name: 'app_tut_unit_new', methods: ['GET', 'POST'])]
+    public function new($date, $time, Request $request, TutUnitRepository $tutUnitRepository): Response
     {
         $tutUnit = new TutUnit();
+        if($time < 10){
+            $time = "0" . $time;
+        }
+        
+        $datetime = new \DateTime($date . " " . $time . ":00");
         $form = $this->createForm(TutUnitType::class, $tutUnit);
+        $form->get("datetime")->setData($datetime);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -55,6 +70,7 @@ class TutUnitController extends AbstractController
         return $this->renderForm('tut_unit/new.html.twig', [
             'tut_unit' => $tutUnit,
             'form' => $form,
+            'datetime' => $datetime
         ]);
     }
 
