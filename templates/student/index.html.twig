@@ -25,8 +25,8 @@
                 <td>{{ student.major }}</td>
                 <td>{{ student.details }}</td>
                 <td>
-                    <a href="{{ path('app_student_show', {'id': student.id}) }}">show</a>
-                    <a href="{{ path('app_student_edit', {'id': student.id}) }}">edit</a>
+                    <a class="card-link btn btn-outline-success mt-2" role="button" href="{{ path('app_student_show', {'id': student.id}) }}">show</a>
+                    <a class="card-link btn btn-outline-primary mt-2" role="button" href="{{ path('app_student_edit', {'id': student.id}) }}">edit</a>
                 </td>
             </tr>
         {% else %}
@@ -37,5 +37,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_student_new') }}">Create new</a>
+    <a class="card-link btn btn-outline-dark mt-2" role="button" href="{{ path('app_student_new') }}">Create new</a>
 {% endblock %}
