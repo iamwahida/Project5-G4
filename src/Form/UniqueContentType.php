@@ -16,7 +16,6 @@ class UniqueContentType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-
             ->add('first_name')
             ->add('last_name')
             ->add('description')
@@ -51,9 +50,8 @@ class UniqueContentType extends AbstractType
                         'mimeTypesMessage' => 'Please upload a valid picture',
                     ])
                 ]
-            ] )
-            ;
-    }
+            ] );
+}
 
     public function configureOptions(OptionsResolver $resolver): void
     {
