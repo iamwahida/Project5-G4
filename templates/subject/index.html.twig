@@ -14,9 +14,9 @@
                 <div class="card-body">
                   {# <h6 class="card-subtitle mb-2 text-muted">{{ subject.id }}</h6> #}
                  
-                        <a style="background-color: rgb(241, 158, 158);" href="{{ path('app_subject_show', {'id': subject.id}) }}" class="card-link btn" role="button">Details</a>
+                        <a href="{{ path('app_subject_show', {'id': subject.id}) }}" class="card-link btn btn-outline-success mt-2" role="button">Details</a>
                    <br><br>
-                        <a style="background-color: rgb(116, 200, 221);"  href="{{ path('app_subject_edit', {'id': subject.id}) }}" class="card-link btn " role="button">Edit</a>
+                        <a href="{{ path('app_subject_edit', {'id': subject.id}) }}" class="card-link btn btn-outline-primary mt-2" role="button">Edit</a>
               </div>
             </div>
         </div>

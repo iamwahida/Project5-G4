@@ -1,13 +1,20 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit UniqueContent{% endblock %}
+{% block title %}Edit Unique Content{% endblock %}
 
 {% block body %}
-    <h1>Edit UniqueContent</h1>
 
+<div class="container mt-3 mb-3">
+    <h3>Edit UniqueContent</h3>
+</div>
+
+    <div class="container">
+        <div class="card border border-0" style="width: 600px;">
     {{ include('unique_content/_form.html.twig', {'button_label': 'Update'}) }}
-
-    <a href="{{ path('app_unique_content_index') }}">back to list</a>
-
+   
     {{ include('unique_content/_delete_form.html.twig') }}
+</div>
+<a class="btn btn-outline-secondary mt-2 mb-2" role="button" href="{{ path('app_unique_content_index') }}">Back to the list</a>
+
+    </div>
 {% endblock %}
