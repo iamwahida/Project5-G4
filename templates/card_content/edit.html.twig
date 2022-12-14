@@ -3,13 +3,17 @@
 {% block title %}Edit CardContent{% endblock %}
 
 {% block body %}
+<div class="container mt-2 mb-2">
     <h1>Edit CardContent</h1>
+</div>
 
     <div class="container">
+        <div class="card p-4 border border-0" style="width: 500px;">
     {{ include('card_content/_form.html.twig', {'button_label': 'Update'}) }}
-
-    <a href="{{ path('app_card_content_index') }}">back to list</a>
-
     {{ include('card_content/_delete_form.html.twig') }}
+<a class="btn btn-outline-secondary mt-2" role="button" href="{{ path('app_card_content_index') }}">Back to list</a>
+
+</div>
     </div>
+
 {% endblock %}

@@ -13,15 +13,21 @@ use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Validator\Constraints\File;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 class CardContentType extends AbstractType
 {    
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('card_title')
-            ->add('card_text')
+            ->add('card_title', TextType::class, [
+                'attr' => ['class' => 'form-control border border-dark', 'style' => 'margin-bottom:15px'],
+            ])
+            ->add('card_text', TextType::class, [
+                'attr' => ['class' => 'form-control border border-dark', 'style' => 'margin-bottom:15px'],
+            ])
             ->add('card_pic', FileType::class,[
+                'attr' => ['class' => 'form-control border border-dark', 'style' => 'margin-bottom:15px'],
                 'label' => 'image (PDF file)',
                 'mapped' => false,
                 'required' => false,

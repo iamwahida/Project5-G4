@@ -14,7 +14,7 @@
         {% for card_content in card_contents %}
         <div class="col-4 my-3">
             <div class="card">
-                <img class="card-img-top" src="{{asset("images/" ~ card_content.cardPic)}}" alt="Card image cap">
+                <img  style="width: 130px; text-align:center;" class="card-img-top" src="{{asset("images/" ~ card_content.cardPic)}}" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title">{{ card_content.cardTitle }}</h5>
                     <p class="card-text">{{ card_content.cardText }}</p>
