@@ -3,18 +3,76 @@
 {% block title %}Register{% endblock %}
 
 {% block body %}
-    <h1>Register</h1>
+<h3 class="text-center mb-3">Register</h3>
 
+<svg style="position:absolute" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" width="100%" height="800" preserveAspectRatio="none" viewBox="0 0 100% 100%">
+    <g mask="url(&quot;#SvgjsMask1117&quot;)" fill="none">
+        <rect width="2500" height="800" x="0" y="0" fill="rgba(255, 255, 255, 1)"></rect>
+        <path d="M1813.282,188.28C1849.371,188.638,1891.081,188.078,1909.315,156.932C1927.655,125.605,1910.289,87.298,1890.037,57.173C1872.492,31.074,1844.705,15.328,1813.282,14.08C1779.236,12.728,1743.925,22.166,1725.192,50.628C1704.659,81.824,1700.364,123.6,1720.495,155.057C1739.474,184.714,1778.074,187.931,1813.282,188.28" fill="rgba(219, 16, 16, 0.4)" class="triangle-float3"></path>
+        <path d="M1951.61 325.18 a188.14 188.14 0 1 0 376.28 0 a188.14 188.14 0 1 0 -376.28 0z" fill="rgba(219, 16, 16, 0.4)" class="triangle-float3"></path>
+        <path d="M2366.496,702.07C2441.559,706.635,2514.174,662.724,2548.077,595.598C2579.371,533.637,2552.014,463.807,2517.152,403.781C2482.5,344.117,2435.488,283.752,2366.496,282.952C2296.54,282.141,2241.063,337.696,2209.666,400.216C2181.499,456.305,2190.584,519.924,2219.521,575.619C2251.457,637.087,2297.355,697.865,2366.496,702.07" fill="rgba(219, 16, 16, 0.4)" class="triangle-float2"></path>
+        <path d="M868.65 292.76 a153.35 153.35 0 1 0 306.7 0 a153.35 153.35 0 1 0 -306.7 0z" fill="rgba(219, 16, 16, 0.4)" class="triangle-float3"></path>
+        <path d="M1890.771,381.816C1939.514,380.184,1988.743,365.526,2014.477,324.098C2041.555,280.506,2043.793,223.504,2015.845,180.465C1989.857,140.444,1938.471,132.23,1890.771,133.593C1846.005,134.872,1803.107,150.539,1777.496,187.277C1747.286,230.611,1725.254,287.241,1751.835,332.891C1778.315,378.368,1838.175,383.577,1890.771,381.816" fill="rgba(219, 16, 16, 0.4)" class="triangle-float1"></path>
+        <path d="M973.84,787.673C1040.551,790.87,1110.315,765.446,1142.424,706.883C1173.626,649.975,1152.676,581.089,1116.736,527.049C1084.93,479.225,1031.261,452.122,973.84,453.392C918.648,454.612,869.828,485.762,841.484,533.135C812.287,581.932,804.861,641.512,831.095,691.964C859.421,746.439,912.51,784.734,973.84,787.673" fill="rgba(219, 16, 16, 0.4)" class="triangle-float2"></path>
+        <path d="M2225.655,368.591C2287.189,368.412,2350.626,342.126,2377.116,286.586C2401.263,235.959,2365.716,183.041,2337.187,134.747C2309.408,87.723,2280.27,30.467,2225.655,30.196C2170.803,29.924,2140.226,86.483,2112.189,133.63C2083.184,182.404,2047.985,236.371,2072.662,287.471C2099.566,343.182,2163.788,368.771,2225.655,368.591" fill="rgba(219, 16, 16, 0.4)" class="triangle-float1"></path>
+        <path d="M-152.83 508.47 a158.34 158.34 0 1 0 316.68 0 a158.34 158.34 0 1 0 -316.68 0z" fill="rgba(219, 16, 16, 0.4)" class="triangle-float2"></path>
+        <path d="M674.35 461.75 a138.8 138.8 0 1 0 277.6 0 a138.8 138.8 0 1 0 -277.6 0z" fill="rgba(219, 16, 16, 0.4)" class="triangle-float2"></path>
+        <path d="M1272.694,634.884C1305.729,635.973,1338.283,621.84,1355.503,593.627C1373.424,564.266,1375.819,525.905,1356.635,497.354C1339.067,471.209,1304.191,470.737,1272.694,470.386C1240.267,470.025,1202.651,467.955,1185.453,495.448C1167.649,523.91,1181.026,560.001,1198.833,588.461C1215.364,614.883,1241.544,633.857,1272.694,634.884" fill="rgba(219, 16, 16, 0.4)" class="triangle-float1"></path>
+        <path d="M602.2 471.07 a167.22 167.22 0 1 0 334.44 0 a167.22 167.22 0 1 0 -334.44 0z" fill="rgba(219, 16, 16, 0.4)" class="triangle-float2"></path>
+        <path d="M1272.05 683 a123.35 123.35 0 1 0 246.7 0 a123.35 123.35 0 1 0 -246.7 0z" fill="rgba(219, 16, 16, 0.4)" class="triangle-float2"></path>
+        <path d="M1024.426,306.453C1090.55,306.522,1163.973,306.77,1201.398,252.256C1242.82,191.919,1241.406,109.246,1202.266,47.405C1165.406,-10.833,1093.193,-31.981,1024.426,-27.358C963.661,-23.273,916.2,17.328,883.683,68.822C848.108,125.158,814.136,194.561,848.09,251.888C881.696,308.629,958.48,306.384,1024.426,306.453" fill="rgba(219, 16, 16, 0.4)" class="triangle-float2"></path>
+        <path d="M908.02 71.59 a190.5 190.5 0 1 0 381 0 a190.5 190.5 0 1 0 -381 0z" fill="rgba(219, 16, 16, 0.4)" class="triangle-float2"></path>
+        <path d="M773.11 52.51 a181.88 181.88 0 1 0 363.76 0 a181.88 181.88 0 1 0 -363.76 0z" fill="rgba(219, 16, 16, 0.4)" class="triangle-float1"></path>
+        <path d="M1949.02 112.09 a185.29 185.29 0 1 0 370.58 0 a185.29 185.29 0 1 0 -370.58 0z" fill="rgba(219, 16, 16, 0.4)" class="triangle-float3"></path>
+    </g>
+    <defs>
+        <mask id="SvgjsMask1117">
+            <rect width="100%" height="800" fill="#ffffff"></rect>
+        </mask>
+        <style>
+            @keyframes float1 {
+                0%{transform: translate(0, 0)}
+                50%{transform: translate(-10px, 0)}
+                100%{transform: translate(0, 0)}
+            }
+
+            .triangle-float1 {
+                animation: float1 5s infinite;
+            }
+
+            @keyframes float2 {
+                0%{transform: translate(0, 0)}
+                50%{transform: translate(-5px, -5px)}
+                100%{transform: translate(0, 0)}
+            }
+
+            .triangle-float2 {
+                animation: float2 4s infinite;
+            }
+
+            @keyframes float3 {
+                0%{transform: translate(0, 0)}
+                50%{transform: translate(0, -10px)}
+                100%{transform: translate(0, 0)}
+            }
+
+            .triangle-float3 {
+                animation: float3 6s infinite;
+            }
+        </style>
+    </defs>
+</svg>
+    
+    <div class="container d-flex justify-content-center">
+        <div class="card shadow p-5 mb-5" style="width:auto;">
     {{ form_start(registrationForm) }}
      {{ form_row(registrationForm.email) }}
         {{ form_row(registrationForm.plainPassword, {
             label: 'Password'
         }) }}
         {{ form_row(registrationForm.agreeTerms) }}
-
-        <button type="submit" class="btn">Register</button>
-
-
-
+        <button type="submit" class="btn btn-dark mt-2">Register</button>
     {{ form_end(registrationForm) }}
+
+</div>
 {% endblock %}
