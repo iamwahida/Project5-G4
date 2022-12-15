@@ -3,9 +3,13 @@
 {% block title %}New CardContent{% endblock %}
 
 {% block body %}
+<div class="container">
     <h1>Create new CardContent</h1>
+</div>
 
+<div class="container">
     {{ include('card_content/_form.html.twig') }}
+    <a class="card-link btn btn-outline-secondary mt-3" href="{{ path('app_card_content_index') }}">Back to list</a>
+</div>
 
-    <a class="card-link btn btn-outline-secondary mt-3 href="{{ path('app_card_content_index') }}">Back to list</a>
 {% endblock %}

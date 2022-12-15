@@ -5,23 +5,21 @@
 {% block body %}
 <div class="container">
 
-    <h1>CardContent</h1>
+    <h1>Card Content</h1>
 </div>
 
 <div class="container">
 
     <div class="col-4 my-3">
-        <div class="card" style="width:fit-content">
-            <img style="width: 100px; text-align:center;" class="card-img-top" src="{{asset("images/" ~ card_content.cardPic)}}" alt="Card image cap">
+        <div class="card border border-0">
+            <img style="width: 130px; text-align:center;" class="card-img-top" src="{{asset("images/" ~ card_content.cardPic)}}" alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title">{{ card_content.cardTitle }}</h5>
                 <p class="card-text">ID: {{ card_content.id }}</p>
                 <p class="card-text">{{ card_content.cardText }}</p>
-                
-                    <a class="card-link btn btn-outline-secondary mt-2" role="button" href="{{ path('app_card_content_show', {'id': card_content.id}) }}" class="btn btn-secondary w-100">Info</a>
-                
+                        
                     <a class="card-link btn btn-outline-secondary mt-2" role="button" href="{{ path('app_card_content_edit', {'id': card_content.id}) }}" class="btn btn-secondary w-100">Edit</a>
-
+    <a class="card-link btn btn-outline-secondary mt-3" href="{{ path('app_card_content_index') }}">Back to list</a>
                     {{ include('card_content/_delete_form.html.twig') }}
              
                 </div>
