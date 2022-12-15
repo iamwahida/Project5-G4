@@ -3,11 +3,15 @@
 {% block title %}Edit Subject{% endblock %}
 
 {% block body %}
-<h1 style="margin:20px;">Edit Subject</h1>
+<div class="container">
+<h1>Edit Subject</h1>
+</div>
 
 <div class="container">
+    <div class="card border border-0" style="width: 400px;">
     <div class="mb-2">{{ include('subject/_form.html.twig', {'button_label': 'Update'}) }}</div>
     <div>{{ include('subject/_delete_form.html.twig') }}</div>
+</div>
 </div>
 
 {% endblock %}
