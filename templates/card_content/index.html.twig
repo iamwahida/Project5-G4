@@ -13,7 +13,7 @@
     <div class="row">
         {% for card_content in card_contents %}
         <div class="col-4 my-3">
-            <div class="card border border-0">
+            <div class="card border border-2 p-2">
                 <img  style="width: 130px; text-align:center;" class="card-img-top" src="{{asset("images/" ~ card_content.cardPic)}}" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title">{{ card_content.cardTitle }}</h5>
