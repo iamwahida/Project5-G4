@@ -19,12 +19,12 @@
                     <h5 class="card-title">{{ card_content.cardTitle }}</h5>
                     <p class="card-text">{{ card_content.cardText }}</p>
                    
-                        <a class="card-link btn btn-outline-secondary mt-2" role="button" href="{{ path('app_card_content_show', {'id': card_content.id}) }}" class="btn btn-secondary w-100">Info</a>
+                    <a class="card-link btn btn-outline-secondary mt-2" role="button" href="{{ path('app_card_content_show', {'id': card_content.id}) }}" class="btn btn-secondary w-100">Info</a>
                    
-                        <a class="card-link btn btn-outline-secondary mt-2" role="button" href="{{ path('app_card_content_edit', {'id': card_content.id}) }}" class="btn btn-secondary w-100">Edit</a>
+                    <a class="card-link btn btn-outline-secondary mt-2" role="button" href="{{ path('app_card_content_edit', {'id': card_content.id}) }}" class="btn btn-secondary w-100">Edit</a>
                    
-                        {{ include('card_content/_delete_form.html.twig') }}
-                    </div>
+                    {{ include('card_content/_delete_form.html.twig') }}
+                    
                 </div>
             </div>
         </div>
