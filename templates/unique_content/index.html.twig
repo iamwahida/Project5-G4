@@ -24,8 +24,8 @@
                 <td>{{ unique_content.firstName }}</td>
                 <td>{{ unique_content.lastName }}</td>
                 <td>{{ unique_content.description }}</td>
-                <td><img class="card-img-top" src="{{asset("images/" ~ unique_content.tutPic)}}" alt="Card image cap"></td>
-                <td><img class="card-img-top" src="{{asset("images/" ~ unique_content.bgPic)}}" alt="Card image cap"></td>
+                <td><img style="width: 130px;" class="card-img-top" src="{{asset("images/" ~ unique_content.tutPic)}}" alt="Card image cap"></td>
+                <td><img style="width: 130px;" class="card-img-top" src="{{asset("images/" ~ unique_content.bgPic)}}" alt="Card image cap"></td>
                 <td>
                     <a class="card-link btn btn-outline-success mt-2" role="button" href="{{ path('app_unique_content_show', {'id': unique_content.id}) }}">Show</a>
                     <a class="card-link btn btn-outline-primary mt-2" role="button" href="{{ path('app_unique_content_edit', {'id': unique_content.id}) }}">Edit</a>
