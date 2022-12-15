@@ -3,7 +3,9 @@
 {% block title %}Edit University{% endblock %}
 
 {% block body %}
-<h1 style="margin:20px;">Edit University</h1>
+<div class="container mt-3 mb-3">
+    <h1>Edit University</h1>
+</div>
 
 <div class="container">
     <div class="mb-2">{{ include('university/_form.html.twig', {'button_label': 'Update'}) }}</div>
