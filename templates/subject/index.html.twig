@@ -11,11 +11,10 @@
         <div class="col">
             <div class="card border-dark mb-3 shadow-sm p-3 mb-5 bg-body rounded" style="width: 18rem;">
                 <div class="card-header fw-bold">{{ subject.subjectName }}</div>
-                <div class="card-body">
+                <div class="card-body d-flex">
                   {# <h6 class="card-subtitle mb-2 text-muted">{{ subject.id }}</h6> #}
                  
                         <a href="{{ path('app_subject_show', {'id': subject.id}) }}" class="card-link btn btn-outline-success mt-2" role="button">Details</a>
-                   <br><br>
                         <a href="{{ path('app_subject_edit', {'id': subject.id}) }}" class="card-link btn btn-outline-primary mt-2" role="button">Edit</a>
               </div>
             </div>
