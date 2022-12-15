@@ -21,7 +21,7 @@ class TutUnitType extends AbstractType
             ->add('available', CheckboxType::class, [
                 'attr' => ['style' => 'margin-bottom:15px; margin-left:15px', 'class' => 'form-check-input border border-dark p-2 mb-3', 'type' => 'checkbox']
             ])
-            ->add('datetime', DateTimeType::class, ['attr'=>['value' => 'datetime','class' => 'form-control border border-dark p-2 mb-3' ]])
+            ->add('datetime', DateTimeType::class, ['attr'=>['value' => 'datetime','class' => 'form-control border border-dark p-2 mb-3 d-flex' ]])
             
             ->add('fk_subject', EntityType::class,
             ['class' => Subject::class,'choice_label' => 'subjectName', 'attr' => ['class' => 'form-control border border-dark p-2 mb-3'] ])
