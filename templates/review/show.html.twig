@@ -3,8 +3,11 @@
 {% block title %}Review{% endblock %}
 
 {% block body %}
+<div class="container">
     <h1>Review</h1>
+    </div>
 
+    <div class="container">
     <table class="table">
         <tbody>
             <tr>
@@ -31,4 +34,5 @@
     <a href="{{ path('app_review_edit', {'id': review.id}) }}">edit</a>
 
     {{ include('review/_delete_form.html.twig') }}
+</div>
 {% endblock %}
