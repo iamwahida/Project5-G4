@@ -19,13 +19,7 @@ class RegistrationFormType extends AbstractType
     {
         $builder
             ->add('email', EmailType::class, [
-                'attr' => ['class' => 'form-control border border-dark', 'style' => 'margin-bottom:15px'],
-                'constraints' => [
-                    new IsTrue([
-                        'message' => 'Please enter your email.',
-                    ]),
-                ],
-               
+                'attr' => ['class' => 'form-control border border-dark', 'style' => 'margin-bottom:15px']
             ])
             ->add('agreeTerms', CheckboxType::class, [
                 'mapped' => false,
