@@ -72,11 +72,11 @@
                 {% endfor %}
                 {% if found == true %}
                     <div class="col text-center">
-                            <a href="{{appointmentId}}/edit" class="text-white d-block bg-success text-decoration-none w-100">Booked</a>
+                            <a href="{{appointmentId}}/edit" class="text-white d-block bg-success text-decoration-none w-100 border border-2">Booked</a>
                         </div>
                         {% else %}
                              <div class="col text-center">
-						    <a href="new/{{day}}/{{time}}" class="text-white d-block bg-primary text-decoration-none w-100">+</a>
+						    <a href="new/{{day}}/{{time}}" class="text-white d-block bg-primary text-decoration-none w-100 border border-2">+</a>
 					    </div>
                 {% endif %}
                 
