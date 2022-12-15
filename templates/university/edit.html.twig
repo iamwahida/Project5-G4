@@ -8,8 +8,10 @@
 </div>
 
 <div class="container">
+
+    
     <div class="mb-2">{{ include('university/_form.html.twig', {'button_label': 'Update'}) }}</div>
     <div>{{ include('university/_delete_form.html.twig') }}</div>
-    <div><a class="btn btn-secondary mt-2" role="button" href="{{ path('app_university_index') }}">Back to list</a></div>
+        <a class="btn btn-secondary mt-2" role="button" href="{{ path('app_university_index') }}">Back to list</a>
 </div>
 {% endblock %}
