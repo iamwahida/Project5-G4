@@ -5,6 +5,7 @@
       <div class="d-grid gap-2 d-md-flex justify-content-md-end">
 
         {% if app.user %}
+          <a href="{{ path('app_university_index') }}"<button class="btn btn-outline-secondary me-md-2" type="button">Universities</button></a>
           <a href="{{ path('app_logout') }}"<button class="btn btn-outline-secondary me-md-2" type="button">Logout {{ app.user.userIdentifier }}</button></a>
         {% else %}
           <a href="/login"><button class="btn btn-outline-secondary me-md-2" type="button">Login</button></a>
