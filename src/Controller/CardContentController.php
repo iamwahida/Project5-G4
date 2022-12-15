@@ -72,13 +72,32 @@ class CardContentController extends AbstractController
     }
 
     #[Route('/{id}/edit', name: 'app_card_content_edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request, CardContent $cardContent, CardContentRepository $cardContentRepository): Response
+    public function edit(Request $request, CardContent $cardContent, CardContentRepository $cardContentRepository, SluggerInterface $slugger): Response
     {
         $form = $this->createForm(CardContentType::class, $cardContent);
         $form->handleRequest($request);
 
+
         if ($form->isSubmitted() && $form->isValid()) {
-            $cardContentRepository->save($cardContent, true);
+            $ImageFile = $form->get('card_pic')->getData();
+
+            if ($ImageFile){
+                $originalFilename = pathinfo($ImageFile->getClientOriginalName(), PATHINFO_FILENAME);
+                $safeFilename = $slugger->slug($originalFilename);
+                $newFilename = $safeFilename.'-'.uniqid().'.'.$ImageFile->guessExtension();
+                try {
+                    $ImageFile->move(
+                        // $this->getParameter('images_directory'),
+                        "images/",
+                        $newFilename
+                    );
+                } catch (FileException $e) {
+                    // ... handle exception if something happens during file upload
+                }
+                $cardContent->setCardPic($newFilename);
+                $cardContentRepository->save($cardContent, true);
+                
+            }
 
             return $this->redirectToRoute('app_card_content_index', [], Response::HTTP_SEE_OTHER);
         }
