@@ -3,6 +3,13 @@
 {% block title %}TutUnit index{% endblock %}
 
 {% block body %}
+
+    <style>
+        .bg-secondary{
+            background-color: #E3E3E3 !important;
+            color: black !important; 
+        }
+    </style>
     <h1 class="text-center mb-5">Tutoring Units</h1>
 
 
@@ -76,7 +83,7 @@
                         </div>
                         {% else %}
                              <div class="col text-center">
-						    <a href="new/{{day}}/{{time}}" class="text-white d-block bg-primary text-decoration-none w-100 border border-2">+</a>
+						    <a href="new/{{day}}/{{time}}" class="text-white d-block bg-secondary text-decoration-none w-100 border border-2">+</a>
 					    </div>
                 {% endif %}
                 
