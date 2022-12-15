@@ -3,11 +3,14 @@
 {% block title %}New Subject{% endblock %}
 
 {% block body %}
-    <h1 style="margin:20px;">Create new Subject</h1>
+<div class="container">
+    <h1>Create new Subject</h1>
+</div>
 
     <div class="container">
+        <div class="card border border-0" style="width: 400px;">
     {{ include('subject/_form.html.twig') }}
-
+</div>
     <a class="card-link btn mt-2" role="button" style="background-color: rgb(163, 193, 201);" href="{{ path('app_subject_index') }}">Go back to the list.</a>
 
 </div>
