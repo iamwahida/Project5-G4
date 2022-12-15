@@ -3,8 +3,11 @@
 {% block title %}Review index{% endblock %}
 
 {% block body %}
-    <h1>Review index</h1>
+<div class="container">
+    <h1>Review</h1>
+</div>
 
+<div class="container">
     <table class="table">
         <thead>
             <tr>
@@ -36,4 +39,6 @@
     </table>
 
     <a class="card-link btn btn-outline-dark mt-2" role="button" href="{{ path('app_review_new') }}">Create new</a>
+</div>
+
 {% endblock %}
