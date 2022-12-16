@@ -3,11 +3,17 @@
 This is the working prototype of the final project on the Backend Devs Course @ Code Factory Vienna.
 
 Collaborators:
+
 Wahida Nemati (FE, BE)
+
 Utku Özkaya (FE)
+
 Marko Schoretits (PM; DB, BE)
+
 Michael Steinacher (BE, FE)
+
 Vanja Juric (BE, DB)
+
 
 The task was defined as follows:
 
