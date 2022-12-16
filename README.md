@@ -4,15 +4,15 @@ This is the working prototype of the final project on the Backend Devs Course @ 
 
 Collaborators:
 
-Wahida Nemati (FE, BE)
+- Wahida Nemati (FE, BE)
 
-Utku Özkaya (FE)
+- Utku Özkaya (FE)
 
-Marko Schoretits (PM; DB, BE)
+- Marko Schoretits (PM; DB, BE)
 
-Michael Steinacher (BE, FE)
+- Michael Steinacher (BE, FE)
 
-Vanja Juric (BE, DB)
+- Vanja Juric (BE, DB)
 
 
 The task was defined as follows:
